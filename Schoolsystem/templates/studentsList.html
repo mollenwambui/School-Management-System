@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<style>
+    #students {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    #students td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    
+    #students tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #students tr:hover {background-color: #ddd;}
+    
+    #students th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+    }
+    </style>
+<body>
+   <p>Students List</p>
+   
+   <table id="students">
+    <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Email</th>
+    <th>Gender</th>
+    <th>Stream</th>
+    <th>Age</th> 
+    <th>Address</th>
+    <th>Admission Number</th>
+    <th>PhoneNumber</th>
+    <th>Emergency Contact</th>
+    
+    </tr>
+     {% for student in students%}
+     <tr>
+        <td>{{student.first_name}}</td>
+        <td>{{student.last_name}}</td>
+        <td>{{student.email}}</td>
+        <td>{{student.gender}}</td>
+        <td>{{student.stream}}</td>
+        <td>{{student.age}}</td>
+        <td>{{student.address}}</td>
+        <td>{{student.admission_number}}</td>
+        <td>{{student.phone_number}}</td>
+        <td>{{student.emergency_contact}}</td>
+     </tr>
+     {% endfor %}
+
+   </table>
+</body>
+</html>
