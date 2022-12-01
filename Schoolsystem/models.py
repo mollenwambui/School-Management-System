@@ -4,6 +4,8 @@ from email.policy import default
 from turtle import mode
 from django.db import models
 from django.utils import timezone
+from django_countries.fields import CountryField
+
 # Create your models here.
 class School(models.Model):
     school_name=models.CharField(max_length=20,null=True)
@@ -20,6 +22,7 @@ class Student(models.Model)  :
     GENDER_CHOICES=(("Male","Male"),("Female","Female"),("Prefer not to  say","Prefer not to say"))
     gender=models.CharField(max_length=18,null=True,choices=GENDER_CHOICES)
     address=models.TextField(null=True)
+    country = models.CountryField(blank_label='(select country)',null=True)
     STREAM_CHOICES=(("AdaLab","AdaLab"),("AnitaB","AnitaB"),("HopperLab","HopperLab"))
     stream=models.CharField(max_length=10,null=True,choices=STREAM_CHOICES)
     age=models.PositiveSmallIntegerField(null=True)
